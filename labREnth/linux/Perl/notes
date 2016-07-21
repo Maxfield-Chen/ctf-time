@@ -1,0 +1,7 @@
+bowie.pl
+Well it's Perl. I've never written a line of perl in my life.
+Apparently sub is function definition and . is string concatonate.
+It's a massive file, seems to use base64 and asks for an input 
+  - First thought was to grep for all lines with chr and provide the correct input
+  - Noticed an eval statement, evals a big block of base64
+    -Decoded: 

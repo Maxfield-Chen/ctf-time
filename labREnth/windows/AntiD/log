@@ -1,0 +1,5 @@
+UPX packed
+  -Doesn't unpack cleanly with upx
+  -Extra information at tail.
+Possibility to detect debugger
+
