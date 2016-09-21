@@ -1,0 +1,16 @@
+Alloc Dog
+  {
+    snail addr
+    func
+    func
+  }
+Alloc Cat
+
+Dangling pointer in interaction, no check for freed object.
+Alloc Cat
+Dog->Print
+Free Cat
+Alloc Dog w/ bad
+Call Cat->Print
+
+win addr: \xd1\x08\x40\x00

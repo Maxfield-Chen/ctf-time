@@ -1,0 +1,10 @@
+Try running file
+you know it's a png
+Look at the magic bytes: they don't match, so fixeru
+  -Png's are divided into chunks, each chunk has a 4 bytes header. 
+    -Fix those headers, replace with 123, probably a substitution
+    -Look throughout the file for headers and replace where necesarry.
+Use tr; given 2 sets of chars, maps all first into second set.
+There's still something wrong. Replacing 123 all through the file screwed things up.
+cnc(chunk checksum correction) checks for png
+  -That's hard, use http://schaik.com/png/pngcsum.html

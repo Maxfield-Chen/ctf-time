@@ -1,0 +1,7 @@
+role=admin
+We control plaintext which they turn into ciphertext
+ole=adminAAAAAAA
+  -fd5c9f212aea40437a0d1edb27ff430b fc9b1e0ff9189d6a10388c9d0e70758c
+AAAAAAAAAAAAAAAr
+  -9ae56a2ed6bbb789a27704f25ee3af08 fc9b1e0ff9189d6a10388c9d0e70758c
+9ae56a2ed6bbb789a27704f25ee3af08fd5c9f212aea40437a0d1edb27ff430b

