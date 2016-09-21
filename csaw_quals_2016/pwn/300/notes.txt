@@ -1,0 +1,3 @@
+Name buffer memset with 0xf8
+Read called with 0xf7, so no problems there
+Default highscore: allocated 0x200

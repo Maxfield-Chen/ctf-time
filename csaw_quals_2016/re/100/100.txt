@@ -1,0 +1,16 @@
+First 16 bytes don't matter
+
+Must be 30 long
+To win must pass compare
+
+
+3 string funcs
+
+1:
+  -Mallocs 24 bytes into string
+2:
+  -str1, str2
+  -Loops through str2 chr by chr xor itself with 0x50
+  -Sets str1 = str2
+3:
+  -Str1: character by char: s[i] ^ 0x20 + 35

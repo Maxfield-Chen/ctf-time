@@ -1,0 +1,66 @@
+LuaS
+make_board
+populate_board
+board_tostring
+fall
+rotate
+crush
+rotate_left
+readAll
+help
+quit
+exit
+	run_step
+game
+writeline
+let's play a game
+size
+setmetatable
+__tostring
+board_tostring
+size
+math
+randomseed
+ipairs
+math
+random
+fall
+math
+random
+size
+table
+insert
+concat
+size
+make_board
+size
+make_board
+size
+make_board
+rotate
+open
+read
+*all
+close
+string
+readAll
+server.luac
+	writeraw
+quit
+	readline
+string
+exit
+find
+	function
+print
+load
+return 
+populate_board
+make_board
+writeline
+board_tostring
+	run_step
+quit
+fall
+crush
+EDidn't understand. Type 'rotate', 'rotate_left', 'exit', or 'help'.

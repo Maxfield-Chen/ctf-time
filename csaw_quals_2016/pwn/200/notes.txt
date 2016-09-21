@@ -1,0 +1,14 @@
+Alarm 15
+Allocs 300 Chars (0x12c)
+After 312 chars, you break shit(overwrite canary).
+Reads 460 (0x1cc)chars
+60 bytes overwrite, 
+
+Our buffer at -0x140
+Canary at -0x8
+We write 0x144, which means that the [312:320] bytes of output are our canary
+
+Steps:
+  1.Get Eip and correct canary overwrite
+  2.Ropgadget to create proper rop chain.
+    2_5.dup2(2,4) + system w/ proper args
