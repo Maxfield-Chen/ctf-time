@@ -1,0 +1,6 @@
+Baby-RE:
+Input is 13 digits
+Solution is 13 characters concat together
+angr is god
+Math is hard!
+
