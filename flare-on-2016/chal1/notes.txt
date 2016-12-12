@@ -1,0 +1,34 @@
+STATIC ANALYSIS:
+Interesting Strings
+  Days and Months, alphabet
+  Language codes?
+  enter_password
+  Correct
+Notable Functions:
+  4014ae: Password collection
+  401260: Takes a var(94) which is then passed to winfunc
+  402c30: Winfunc
+    -args: 
+Win at 0x4014ae
+Avoid at 0x4014c7
+Start at 0x401479
+
+Read and then sub 2
+
+In the only readable start code they call int 21h which is the DOS function dispatcher?
+  -Moves 9 into ah(eax)
+    -This writes a string to stdout terminated with '$'
+Appears to be packed. Going to try to dump from memory.
+DYNAMIC ANALYSIS:
+  -First thing Immunity breaks on is 0x3C170D
+  -Quickly calls getSystemTimeAsFileTime, GetCurrentThreadId, GetCurrentProcessId, QueryPerformanceCounter
+    -This sounds like some unfortunate anti-debug things.
+      -Common mistake, actually used to calculate canary?
+      -http://reverseengineering.stackexchange.com/questions/6879/defeat-queryperformancecounter-as-anti-debugging-trick
+  -ASLR is on, break on function call to password func (0x401479 in r2).
+  -
+Twitter tip says to check out DES or base64. Interesting.
+Might be base64 modified alphabet?
+  -Hardcoded string: x2dtJEOmyjacxDemx2eczT5cVS9fVUGvWTuZWjuexjRqy24rV29q, len=52
+    -Maybe password, too long to be alphabet
+  -ZYXABCDEFGHIJKLMNOPQRSTUVWzyxabcdefghijklmnopqrstuvw012345679?/

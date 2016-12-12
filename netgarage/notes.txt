@@ -1,0 +1,14 @@
+## level 01
+iz for strings
+
+## level 02
+Had to trigger an SIGFPE, looks like 1/0 but is actually invalid integer creation through abs.
+
+## level 03
+Straight buffer overflow, not even eip, winfunction built in.
+
+## level 04
+Enviornment variable manipulation to replace whoami. Don't forget users have ability to chmod their own files!!!
+
+## level 05
+Shellcoding 101

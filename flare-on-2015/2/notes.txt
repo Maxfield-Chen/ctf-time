@@ -1,0 +1,4 @@
+Functions Needing hooking:
+  -WriteFile
+  -ReadFile
+  -

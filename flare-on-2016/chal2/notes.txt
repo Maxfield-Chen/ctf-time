@@ -1,0 +1,30 @@
+In Chal Description: 
+  857da52bdcaec6da473a59e2fe66df0a BusinessPapers.doc
+  4c262d5ab4bf8586d303bfa91a05b42b DudeLocker.exe
+Static Analysis:
+  -We have a document which doesn't open and an exe which was presumably used to "encrypt" the document.
+  -Looking at functions of DL shows lots of crypto functionality
+lots and lots and lots of encrypted strings
+
+  -Briefcase string?
+
+Start at: 0x4019a0, SHELL32.dll_SHGetFolderPathW
+0x401940: Encryption function?
+  -args(5): local_4h, local_10h, local_8h
+
+Dynamic Analysis:
+  -Lots of variables set to constants at start of 0x4019a0, could be useful for encryption function magic numbers / IV.
+  -Drops a file called briefcase to the desktop
+    -Called with open_existing so we need to make this file.
+In 0x401040, GetVolumeInformationA result(Top Of Stack) is compared to 0x7DAB1D35
+  -If you don't pass the check, eax is set to 0, which gives you "im out of my element."
+    -Just patch that function...so we always pass the check and return 0x7dab1d35 in eax.
+    -Need to install Ida Fentanyl, so I can do proper patches
+Encryption Function(0x401940):
+  -Called with 0x4030000, 0x208600, 0xa12ff70, 0x25
+  -0x4030000: "AuP{PnTqAtAuZqGiPiG"
+  -0x25: Heapsize (37)
+  -Takes each byte of the allocated heap space sets it equal to "AuP{PnTqAtAuZqGiPiG" xor 0x7dab1d35 
+  -Find 
+
+The output of that encryption function is hashed(SHA) with CryptCreateHash, CryptHashData and then used as the base data for CryptDeriveKey which creates a deterministic symettric key.

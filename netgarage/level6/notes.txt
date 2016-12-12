@@ -1,0 +1,3 @@
+There is a strncpy which might lead to non null terminated strings
+If you input the max size name and password we segfault.
+strcat doesn't look vulnerable, greeting would have tobe > 24.
